@@ -19,9 +19,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* 영문은 Inter, 한글은 Noto Sans KR로 렌더링 */
-    body {
+    /* 영문은 Inter, 한글은 Noto Sans KR로 렌더링.
+       stylesheet.css가 strong/papertitle 등에 'Lato'를 직접 지정하고 있어
+       body 상속만으로는 덮어지지 않으므로 요소들을 명시적으로 지정 */
+    body, p, a, li, span, strong, em, b, i:not(.fa):not(.ai),
+    td, th, tr, name, heading, papertitle {
       font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    body {
       -webkit-font-smoothing: antialiased;
     }
 
@@ -287,3 +292,4 @@
 </div>
 </body>
 </html>
+
