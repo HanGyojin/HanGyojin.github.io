@@ -14,12 +14,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
   
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* 전체 폰트를 Lato로 설정 */
+    /* 영문은 Inter, 한글은 Noto Sans KR로 렌더링 */
     body {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* 논문 제목 색상을 검은색으로 고정 */
@@ -71,13 +74,15 @@
                 <name>Gyojin Han (한교진)</name>
               </p>
               <p>
-                I am a Postdoctoral Researcher at <a href="http://siit.kaist.ac.kr/">Statistical Inference and Information Theory</a> (SIIT), 
+                I am a Postdoctoral Researcher at the Information &amp; Electronics Research Institute, 
                 <a href="https://www.kaist.ac.kr/en/">KAIST</a>, supervised by <a href="https://ee.kaist.ac.kr/en/professor/12315/">Junmo Kim</a>. 
+                I am also actively involved in the InnoCORE AI Meta-Scientist Research Group, advised by Tae-Kyun Kim. 
                 I received my B.S. and Ph.D. degrees in Electrical Engineering from KAIST in 2021 and 2026, respectively.
               </p>
               <p>
                 My research interests lie in the broad fields of deep learning, specifically focusing on 
-                <strong>Generative Models</strong>, <strong>3D/4D Computer Vision</strong>, <strong>AI Safety</strong>, and <strong>LLM Reasoning</strong>.
+                <strong>Generative Models</strong>, <strong>3D/4D Computer Vision</strong>, <strong>AI Safety</strong>, 
+                <strong>Multimodal LLMs</strong>, and <strong>Agentic AI</strong>.
               </p>
 
               <p>
@@ -85,7 +90,7 @@
                   <i class="fa fa-paper-plane"></i>&nbsp;Email
                 </a>
                 &nbsp;/&nbsp;
-                <a href="imgs_main/CV_20260325.pdf" target="_blank" rel="noopener">
+                <a href="imgs_main/CV_20260513.pdf" target="_blank" rel="noopener">
                   <i class="fa fa-file-pdf-o"></i>&nbsp;CV
                 </a>
                 &nbsp;/&nbsp;
@@ -126,6 +131,7 @@
    <div class="item text2 section_card" id="news">
     <p><heading>News</heading></p>
     <ul class="news-list">
+        <li> 2026-08 🎉 <strong>One paper</strong> has been accepted to <strong>EMNLP 2026 (Findings)</strong>. </li>
         <li> 2026-02 🎉 <strong>Two papers</strong> have been accepted to <strong>CVPR 2026</strong>. </li>
         <li> 2025-09 🎉 <strong>One paper</strong> has been accepted to <strong>ACM MM 2025</strong>. </li>
         <li> 2025-07 🎉 <strong>One paper</strong> has been accepted to <strong>ICCV 2025</strong>. </li>
@@ -140,24 +146,44 @@
       <em class="underreview-badge">Under Review</em>
       <ul class="underreview-list">
         <li>
-          <span class="underreview-title">Mix-up Your Samples: Implicit Discriminator for Enhancing Guidance-Free Visual Generative Models</span><br>
-          <span class="pub-authors">Jiwan Hur, Dong-Jae Lee, <strong>Gyojin Han</strong>, Dongyeun Lee, Junmo Kim</span>
+          <span class="underreview-title">VistaGS: Multi-View Geometry Foundation Priors for View-Consistent Few-Shot 3D Gaussian Splatting</span><br>
+          <span class="pub-authors">Sungjae Choi, <strong>Gyojin Han</strong>, Hanna Bae, Junmo Kim</span>
         </li>
         <li>
-          <span class="underreview-title">TransMotion: Text-Guided Transformation Learning for Composed Motion Retrieval</span><br>
-          <span class="pub-authors">Jongsuk Kim, <strong>Gyojin Han*</strong>, Junmo Kim</span>
+          <span class="underreview-title">Position Matters in the Overlap: Analyzing Chunk Alignment for Long-Sequence 3D Reconstruction</span><br>
+          <span class="pub-authors">Hanna Bae, Sojeong Song, <strong>Gyojin Han</strong>, Sungjae Choi, Junmo Kim</span>
         </li>
         <li>
-          <span class="underreview-title">Progressive Latent Calibration for Stable Score Distillation</span><br>
+          <span class="underreview-title">Continuous Audio Thinking for Large Audio Language Models</span><br>
+          <span class="pub-authors"><strong>Gyojin Han*</strong>, Dong-Jae Lee*, Changho Choi*, Jongsuk Kim*, Junmo Kim</span>
+        </li>
+        <li>
+          <span class="underreview-title">Improving Guidance-Free Visual Generation via Self-Contrastive Alignment for Likelihood Estimation</span><br>
+          <span class="pub-authors">Jiwan Hur, Dong-Jae Lee, Dongyeun Lee, <strong>Gyojin Han</strong>, Junmo Kim</span>
+        </li>
+        <li>
+          <span class="underreview-title">TransMotion: Text-Guided Transformation Learning for Composed Human Motion Retrieval</span><br>
+          <span class="pub-authors">Jongsuk Kim*, <strong>Gyojin Han*</strong>, Junmo Kim</span>
+        </li>
+        <li>
+          <span class="underreview-title">Progressive Latent Calibration for Stable Score Distillation in High Fidelity Text-to-3D Generation</span><br>
           <span class="pub-authors"><strong>Gyojin Han*</strong>, Jiwan Hur*, Junmo Kim</span>
         </li>
         <li>
-            <span class="underreview-title">DAM: Domain-Aware Module for Multi-Domain Dataset Condensation</span><br>
-            <span class="pub-authors">Jaehyun Choi, <strong>Gyojin Han</strong>, Dong-Jae Lee, Sunghyun Baek, Junmo Kim</span>
-          </li>
+          <span class="underreview-title">DAM: Domain-Aware Module for Multi-Domain Dataset Condensation</span><br>
+          <span class="pub-authors">Jaehyun Choi, <strong>Gyojin Han</strong>, Dong-Jae Lee, Sunghyun Baek, Junmo Kim</span>
+        </li>
       </ul>
 
       <hr style="margin: 20px 0; border: 0.5px solid #eee;">
+
+      <div class="container2">
+        <div class="item text2">
+          <papertitle>Calibration-Free Early Stopping for Chain-of-Thought Reasoning via E-processes</papertitle><br>
+          <span class="pub-authors">Dong-Jae Lee*, <strong>Gyojin Han*</strong>, Junmo Kim</span><br>
+          <strong><em>Conference on Empirical Methods in Natural Language Processing (EMNLP Findings)</em></strong>, 2026
+        </div>
+      </div>
 
       <div class="container2">
         <div class="item text2">
@@ -186,7 +212,7 @@
       <div class="container2">
         <div class="item text2">
           <papertitle>SynAD: Enhancing Real-World End-to-End Autonomous Driving Models through Synthetic Data Integration</papertitle><br>
-          <span class="pub-authors">Jongsuk Kim, Jae Young Lee*, <strong>Gyojin Han</strong>, Dong-Jae Lee, Minki Jeong, Junmo Kim</span><br>
+          <span class="pub-authors">Jongsuk Kim*, Jae Young Lee*, <strong>Gyojin Han</strong>, Dong-Jae Lee, Minki Jeong, Junmo Kim</span><br>
           <strong><em>IEEE/CVF International Conference on Computer Vision (ICCV)</em></strong>, 2025
         </div>
       </div>
@@ -219,15 +245,16 @@
         <div class="item text2">
           <papertitle>Deep Cross-Modal Steganography Using Neural Representations</papertitle><br>
           <span class="pub-authors"><strong>Gyojin Han</strong>, Dong-Jae Lee, Jiwan Hur, Jaehyun Choi, Junmo Kim</span><br>
-          <strong><em>IEEE International Conference on Image Processing (ICIP)</em></strong>, 2023
+          <strong><em>IEEE International Conference on Image Processing (ICIP)</em></strong>, 2023 <strong>(Oral)</strong>
         </div>
       </div>
 
       <div class="container2">
         <div class="item text2">
           <papertitle>Data Poisoning Attack Aiming the Vulnerability of Continual Learning</papertitle><br>
-          <span class="pub-authors"><strong>Gyojin Han*</strong>, Jaehyun Choi, Hyeong Gwon Hong, Junmo Kim</span><br>
-          <strong><em>IEEE International Conference on Image Processing (ICIP)</em></strong>, 2023
+          <span class="pub-authors"><strong>Gyojin Han*</strong>, Jaehyun Choi*, Hyeong Gwon Hong, Junmo Kim</span><br>
+          <strong><em>IEEE International Conference on Image Processing (ICIP)</em></strong>, 2023<br>
+          <span class="pub-authors">(Also presented at NeurIPS Workshop on ML Safety, 2022)</span>
         </div>
       </div>
 
