@@ -47,7 +47,6 @@
       display: inline-block;
       margin-left: 6px;
       padding: 1px 7px;
-      font-size: 0.8em;
       font-weight: 600;
       border-radius: 4px;
       background: #f0f0f0;
@@ -63,7 +62,6 @@
       display: inline-block;
       margin-left: 6px;
       padding: 0px 6px;
-      font-size: 0.75em;
       font-weight: 600;
       letter-spacing: 0.01em;
       border: 1px solid #d5d5d5;
@@ -76,10 +74,32 @@
       border-color: #d5d5d5;
       color: #666;
     }
+    /* 전체 글자 크기 축소 — 숫자만 바꾸면 전체 스케일 조정됨 */
+    body, p, a, li, span, strong, em, b, td, th, div,
+    .item, .item.text, .item.text2,
+    .pub-authors, .pub-venue,
+    .news-list li, .underreview-list li, .underreview-title {
+      font-size: 15px;
+    }
+    name {
+      font-size: 26px;
+    }
+    heading, .underreview-badge {
+      font-size: 18px;
+    }
+    .nav-item {
+      font-size: 14px;
+    }
+    .equal-note {
+      font-size: 13px;
+    }
+    .pub-tag, .pub-type {
+      font-size: 11px;
+    }
+
     /* 공동 1저자 범례 */
     .equal-note {
       margin: -8px 0 16px 0;
-      font-size: 0.85em;
       color: #777;
     }
     /* 이미지 제거에 따른 레이아웃 조정 */
@@ -179,12 +199,12 @@
    <div class="item text2 section_card" id="news">
     <p><heading>News</heading></p>
     <ul class="news-list">
-        <li> 2026-09 🎉 <strong>Two papers</strong> have been accepted to <strong>NeurIPS 2026</strong>. </li>
-        <li> 2026-09 🎉 <strong>One paper</strong> has been accepted to <strong>Pattern Recognition</strong>. </li>
-        <li> 2026-08 🎉 <strong>One paper</strong> has been accepted to <strong>EMNLP 2026 (Findings)</strong>. </li>
-        <li> 2026-02 🎉 <strong>Two papers</strong> have been accepted to <strong>CVPR 2026</strong>. </li>
-        <li> 2025-09 🎉 <strong>One paper</strong> has been accepted to <strong>ACM MM 2025</strong>. </li>
-        <li> 2025-07 🎉 <strong>One paper</strong> has been accepted to <strong>ICCV 2025</strong>. </li>
+        <li> [2026-09] <strong>Two papers</strong> have been accepted to <strong>NeurIPS 2026</strong>. </li>
+        <li> [2026-09] <strong>One paper</strong> has been accepted to <strong>Pattern Recognition</strong>. </li>
+        <li> [2026-08] <strong>One paper</strong> has been accepted to <strong>EMNLP 2026 (Findings)</strong>. </li>
+        <li> [2026-02] <strong>Two papers</strong> have been accepted to <strong>CVPR 2026</strong>. </li>
+        <li> [2025-09] <strong>One paper</strong> has been accepted to <strong>ACM MM 2025</strong>. </li>
+        <li> [2025-07] <strong>One paper</strong> has been accepted to <strong>ICCV 2025</strong>. </li>
     </ul>
   </div>
 
