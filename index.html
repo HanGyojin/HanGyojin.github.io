@@ -77,9 +77,11 @@
     /* 전체 글자 크기 축소 — 숫자만 바꾸면 전체 스케일 조정됨 */
     body, p, a, li, span, strong, em, b, td, th, div,
     .item, .item.text, .item.text2,
-    .pub-authors, .pub-venue,
     .news-list li, .underreview-list li, .underreview-title {
       font-size: 15px;
+    }
+    .pub-authors, .pub-venue {
+      font-size: 14px;
     }
     name {
       font-size: 26px;
@@ -102,10 +104,17 @@
       margin: -8px 0 16px 0;
       color: #777;
     }
-    /* 이미지 제거에 따른 레이아웃 조정 */
+    /* 논문 항목 간격 — 값을 키우면 다시 여유로워짐 */
     .container2 {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 9px;
+    }
+    .container2 .item.text2 {
+      line-height: 1.35;
+    }
+    .underreview-list li {
+      margin-bottom: 7px;
+      line-height: 1.35;
     }
     /* 프로필 사진 크롭 및 원형 적용 */
     .circular.image {
