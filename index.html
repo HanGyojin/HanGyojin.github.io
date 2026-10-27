@@ -108,7 +108,7 @@
     name {
       font-size: 26px;
     }
-    heading, .underreview-badge {
+    heading {
       font-size: 18px;
     }
     .pub-tab {
@@ -249,31 +249,11 @@
       <p><heading>Publications</heading></p>
       <p class="equal-note">* denotes equal contribution, † denotes co-corresponding authors.</p>
       
-      <em class="underreview-badge">Under Review</em>
-      <ul class="underreview-list">
-        <!-- <li>
-          <span class="underreview-title">Py-MAD: Rethinking the Dynamics of Multi-Agent Debate from a Proposal and Verification Perspective</span><br>
-          <span class="pub-authors">Jiwan Hur*, <strong>Gyojin Han*</strong>, Dong-Jae Lee, Junwon Ko, Jongsuk Kim, Tae-Kyun Kim†, Junmo Kim†</span>
-        </li> -->
-        <li>
-          <span class="underreview-title">VistaGS: Multi-View Geometry Foundation Priors for View-Consistent Few-Shot 3D Gaussian Splatting</span><br>
-          <span class="pub-authors">Sungjae Choi, <strong>Gyojin Han</strong>, Hanna Bae, Junmo Kim</span>
-        </li>
-        <li>
-          <span class="underreview-title">Position Matters in the Overlap: Analyzing Chunk Alignment for Long-Sequence 3D Reconstruction</span><br>
-          <span class="pub-authors">Hanna Bae, Sojeong Song, <strong>Gyojin Han</strong>, Sungjae Choi, Junmo Kim</span>
-        </li>
-        <li>
-          <span class="underreview-title">DAM: Domain-Aware Module for Multi-Domain Dataset Condensation</span><br>
-          <span class="pub-authors">Jaehyun Choi, <strong>Gyojin Han</strong>, Dong-Jae Lee, Sunghyun Baek, Junmo Kim</span>
-        </li>
-      </ul>
-
-      <hr style="margin: 20px 0; border: 0.5px solid #eee;">
 
       <div class="pub-tabs" role="tablist" aria-label="Publication type">
         <button class="pub-tab" role="tab" id="tab-conference" aria-controls="panel-conference" aria-selected="true">Conference <span class="pub-count">(13)</span></button>
         <button class="pub-tab" role="tab" id="tab-journal" aria-controls="panel-journal" aria-selected="false" tabindex="-1">Journal <span class="pub-count">(2)</span></button>
+        <button class="pub-tab" role="tab" id="tab-underreview" aria-controls="panel-underreview" aria-selected="false" tabindex="-1">Under Review <span class="pub-count">(3)</span></button>
       </div>
 
       <!-- ============================ Conference ============================= -->
@@ -405,6 +385,28 @@
       </div>
       </div>
 
+      <!-- ============================ Under Review =========================== -->
+      <div id="panel-underreview" role="tabpanel" aria-labelledby="tab-underreview" hidden>
+      <ul class="underreview-list">
+        <!-- <li>
+          <span class="underreview-title">Py-MAD: Rethinking the Dynamics of Multi-Agent Debate from a Proposal and Verification Perspective</span><br>
+          <span class="pub-authors">Jiwan Hur*, <strong>Gyojin Han*</strong>, Dong-Jae Lee, Junwon Ko, Jongsuk Kim, Tae-Kyun Kim†, Junmo Kim†</span>
+        </li> -->
+        <li>
+          <span class="underreview-title">VistaGS: Multi-View Geometry Foundation Priors for View-Consistent Few-Shot 3D Gaussian Splatting</span><br>
+          <span class="pub-authors">Sungjae Choi, <strong>Gyojin Han</strong>, Hanna Bae, Junmo Kim</span>
+        </li>
+        <li>
+          <span class="underreview-title">Position Matters in the Overlap: Analyzing Chunk Alignment for Long-Sequence 3D Reconstruction</span><br>
+          <span class="pub-authors">Hanna Bae, Sojeong Song, <strong>Gyojin Han</strong>, Sungjae Choi, Junmo Kim</span>
+        </li>
+        <li>
+          <span class="underreview-title">DAM: Domain-Aware Module for Multi-Domain Dataset Condensation</span><br>
+          <span class="pub-authors">Jaehyun Choi, <strong>Gyojin Han</strong>, Dong-Jae Lee, Sunghyun Baek, Junmo Kim</span>
+        </li>
+      </ul>
+      </div>
+
     </div>
    </div>
 
@@ -445,7 +447,8 @@
         }
       });
     });
-    if (location.hash === '#journal') select(document.getElementById('tab-journal'));
+    var fromHash = { '#journal': 'tab-journal', '#underreview': 'tab-underreview' }[location.hash];
+    if (fromHash) select(document.getElementById(fromHash));
   })();
 </script>
 </body>
