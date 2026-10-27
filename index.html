@@ -57,22 +57,40 @@
       background: #e8f0fe;
       color: #1a56db;
     }
-    /* 출판물 종류: 테두리형(중립) — 채움형 발표 형식 배지와 계열을 구분 */
-    .pub-type {
-      display: inline-block;
-      margin-left: 6px;
-      padding: 0px 6px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      border: 1px solid #d5d5d5;
-      border-radius: 4px;
-      background: transparent;
-      color: #666;
-      vertical-align: middle;
+    /* 학회 / 저널 탭 */
+    .pub-tabs {
+      display: flex;
+      gap: 4px;
+      margin: 4px 0 14px 0;
+      border-bottom: 1px solid #e5e5e5;
     }
-    .pub-type.journal {
-      border-color: #d5d5d5;
-      color: #666;
+    .pub-tab {
+      appearance: none;
+      background: none;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      padding: 6px 12px;
+      font-family: inherit;
+      font-weight: 600;
+      color: #888;
+      cursor: pointer;
+    }
+    .pub-tab:hover {
+      color: #333;
+    }
+    .pub-tab[aria-selected="true"] {
+      color: #111;
+      border-bottom-color: #1a56db;
+    }
+    .pub-tab:focus-visible {
+      outline: 2px solid #1a56db;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .pub-count {
+      font-weight: 400;
+      color: #999;
     }
     /* 전체 글자 크기 축소 — 숫자만 바꾸면 전체 스케일 조정됨 */
     body, p, a, li, span, strong, em, b, td, th, div,
@@ -93,13 +111,16 @@
     heading, .underreview-badge {
       font-size: 18px;
     }
+    .pub-tab {
+      font-size: 16px;
+    }
     .nav-item {
       font-size: 14px;
     }
     .equal-note {
       font-size: 13px;
     }
-    .pub-tag, .pub-type {
+    .pub-tag {
       font-size: 11px;
     }
 
@@ -173,7 +194,7 @@
                   <i class="fa fa-paper-plane"></i>&nbsp;Email
                 </a>
                 &nbsp;/&nbsp;
-                <a href="imgs_main/CV_20260513.pdf" target="_blank" rel="noopener">
+                <a href="imgs_main/CV_Gyojin_Han_20261027.pdf" target="_blank" rel="noopener">
                   <i class="fa fa-file-pdf-o"></i>&nbsp;CV
                 </a>
                 &nbsp;/&nbsp;
@@ -214,6 +235,7 @@
    <div class="item text2 section_card" id="news">
     <p><heading>News</heading></p>
     <ul class="news-list">
+        <li> [2026-10] <strong>One paper</strong> has been accepted to <strong>Applied Sciences</strong>. </li>
         <li> [2026-09] <strong>Two papers</strong> have been accepted to <strong>NeurIPS 2026</strong>. </li>
         <li> [2026-09] <strong>One paper</strong> has been accepted to <strong>Pattern Recognition</strong>. </li>
         <li> [2026-08] <strong>One paper</strong> has been accepted to <strong>EMNLP 2026 (Findings)</strong>. </li>
@@ -242,10 +264,6 @@
           <span class="pub-authors">Hanna Bae, Sojeong Song, <strong>Gyojin Han</strong>, Sungjae Choi, Junmo Kim</span>
         </li>
         <li>
-          <span class="underreview-title">TransMotion: Text-Guided Transformation Learning for Composed Human Motion Retrieval</span><br>
-          <span class="pub-authors"><strong>Gyojin Han*†</strong>, Jongsuk Kim*, Junmo Kim†</span>
-        </li>
-        <li>
           <span class="underreview-title">DAM: Domain-Aware Module for Multi-Domain Dataset Condensation</span><br>
           <span class="pub-authors">Jaehyun Choi, <strong>Gyojin Han</strong>, Dong-Jae Lee, Sunghyun Baek, Junmo Kim</span>
         </li>
@@ -253,11 +271,19 @@
 
       <hr style="margin: 20px 0; border: 0.5px solid #eee;">
 
+      <div class="pub-tabs" role="tablist" aria-label="Publication type">
+        <button class="pub-tab" role="tab" id="tab-conference" aria-controls="panel-conference" aria-selected="true">Conference <span class="pub-count">(13)</span></button>
+        <button class="pub-tab" role="tab" id="tab-journal" aria-controls="panel-journal" aria-selected="false" tabindex="-1">Journal <span class="pub-count">(2)</span></button>
+      </div>
+
+      <!-- ============================ Conference ============================= -->
+      <div id="panel-conference" role="tabpanel" aria-labelledby="tab-conference">
+
       <div class="container2">
         <div class="item text2">
           <papertitle>Continuous Audio Thinking for Large Audio Language Models</papertitle><br>
           <span class="pub-authors"><strong>Gyojin Han*</strong>, Dong-Jae Lee*, Changho Choi*, Jongsuk Kim*, Junmo Kim</span><br>
-          <span class="pub-venue">Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2026</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2026</span>
         </div>
       </div>
 
@@ -265,15 +291,7 @@
         <div class="item text2">
           <papertitle>Improving Guidance-Free Visual Generation via Self-Contrastive Alignment for Likelihood Estimation</papertitle><br>
           <span class="pub-authors">Jiwan Hur, Dong-Jae Lee, Dongyeun Lee, <strong>Gyojin Han</strong>, Junmo Kim</span><br>
-          <span class="pub-venue">Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2026</span> <span class="pub-type">Conference</span>
-        </div>
-      </div>
-
-      <div class="container2">
-        <div class="item text2">
-          <papertitle>Progressive Latent Calibration for Stable Score Distillation in High Fidelity Text-to-3D Generation</papertitle><br>
-          <span class="pub-authors"><strong>Gyojin Han*</strong>, Jiwan Hur*, Junmo Kim</span><br>
-          <span class="pub-venue">Pattern Recognition (<strong>PR</strong>), 2026</span> <span class="pub-type journal">Journal</span>
+          <span class="pub-venue">Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2026</span>
         </div>
       </div>
 
@@ -281,7 +299,7 @@
         <div class="item text2">
           <papertitle>Calibration-Free Early Stopping for Chain-of-Thought Reasoning via E-processes</papertitle><br>
           <span class="pub-authors">Dong-Jae Lee*, <strong>Gyojin Han*</strong>, Junmo Kim</span><br>
-          <span class="pub-venue">Conference on Empirical Methods in Natural Language Processing (<strong>EMNLP</strong>), 2026</span> <span class="pub-type">Conference</span> <span class="pub-tag">Findings</span>
+          <span class="pub-venue">Conference on Empirical Methods in Natural Language Processing (<strong>EMNLP</strong>), 2026</span> <span class="pub-tag">Findings</span>
         </div>
       </div>
 
@@ -289,7 +307,7 @@
         <div class="item text2">
           <papertitle>Cross-Axis Feature Fusion with Joint-Wise Motion Difference Prediction for Text-Based 3D Human Motion Editing</papertitle><br>
           <span class="pub-authors"><strong>Gyojin Han</strong>, Junmo Kim</span><br>
-          <span class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</span>
         </div>
       </div>
 
@@ -297,7 +315,7 @@
         <div class="item text2">
           <papertitle>PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion</papertitle><br>
           <span class="pub-authors">Jaehyun Choi, Jiwan Hur, <strong>Gyojin Han</strong>, Jaemyung Yu, Junmo Kim</span><br>
-          <span class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</span>
         </div>
       </div>
 
@@ -305,7 +323,7 @@
         <div class="item text2">
           <papertitle>B4DL: A Benchmark for 4D LiDAR LLM in Spatio-Temporal Understanding</papertitle><br>
           <span class="pub-authors">Changho Choi*, Youngwoo Shin*, <strong>Gyojin Han</strong>, Dong-Jae Lee, Junmo Kim</span><br>
-          <span class="pub-venue">ACM International Conference on Multimedia (<strong>MM</strong>), 2025</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">ACM International Conference on Multimedia (<strong>MM</strong>), 2025</span>
         </div>
       </div>
 
@@ -313,7 +331,7 @@
         <div class="item text2">
           <papertitle>SynAD: Enhancing Real-World End-to-End Autonomous Driving Models through Synthetic Data Integration</papertitle><br>
           <span class="pub-authors">Jongsuk Kim*, Jae Young Lee*, <strong>Gyojin Han</strong>, Dong-Jae Lee, Minki Jeong, Junmo Kim</span><br>
-          <span class="pub-venue">IEEE/CVF International Conference on Computer Vision (<strong>ICCV</strong>), 2025</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">IEEE/CVF International Conference on Computer Vision (<strong>ICCV</strong>), 2025</span>
         </div>
       </div>
 
@@ -321,7 +339,7 @@
         <div class="item text2">
           <papertitle>Unlocking the Capabilities of Masked Generative Models for Image Synthesis via Self-Guidance</papertitle><br>
           <span class="pub-authors">Jiwan Hur, Dong-Jae Lee, <strong>Gyojin Han</strong>, Jaehyun Choi, Yunho Jeon, Junmo Kim</span><br>
-          <span class="pub-venue">Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2024</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2024</span>
         </div>
       </div>
 
@@ -329,7 +347,7 @@
         <div class="item text2">
           <papertitle>Learning Neural Deformation Representation for 4D Dynamic Shape Generation</papertitle><br>
           <span class="pub-authors"><strong>Gyojin Han</strong>, Jiwan Hur, Jaehyun Choi, Junmo Kim</span><br>
-          <span class="pub-venue">European Conference on Computer Vision (<strong>ECCV</strong>), 2024</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">European Conference on Computer Vision (<strong>ECCV</strong>), 2024</span>
         </div>
       </div>
 
@@ -337,7 +355,7 @@
         <div class="item text2">
           <papertitle>Expanding Expressiveness of Diffusion Models with Limited Data via Self-Distillation based Fine-Tuning</papertitle><br>
           <span class="pub-authors">Jiwan Hur, Jaehyun Choi, <strong>Gyojin Han</strong>, Dong-Jae Lee, Junmo Kim</span><br>
-          <span class="pub-venue">IEEE/CVF Winter Conference on Applications of Computer Vision (<strong>WACV</strong>), 2024</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">IEEE/CVF Winter Conference on Applications of Computer Vision (<strong>WACV</strong>), 2024</span>
         </div>
       </div>
 
@@ -345,7 +363,7 @@
         <div class="item text2">
           <papertitle>Deep Cross-Modal Steganography Using Neural Representations</papertitle><br>
           <span class="pub-authors"><strong>Gyojin Han</strong>, Dong-Jae Lee, Jiwan Hur, Jaehyun Choi, Junmo Kim</span><br>
-          <span class="pub-venue">IEEE International Conference on Image Processing (<strong>ICIP</strong>), 2023</span> <span class="pub-type">Conference</span> <span class="pub-tag highlight">Oral</span>
+          <span class="pub-venue">IEEE International Conference on Image Processing (<strong>ICIP</strong>), 2023</span> <span class="pub-tag highlight">Oral</span>
         </div>
       </div>
 
@@ -353,7 +371,7 @@
         <div class="item text2">
           <papertitle>Data Poisoning Attack Aiming the Vulnerability of Continual Learning</papertitle><br>
           <span class="pub-authors"><strong>Gyojin Han*</strong>, Jaehyun Choi*, Hyeong Gwon Hong, Junmo Kim</span><br>
-          <span class="pub-venue">IEEE International Conference on Image Processing (<strong>ICIP</strong>), 2023</span> <span class="pub-type">Conference</span><br>
+          <span class="pub-venue">IEEE International Conference on Image Processing (<strong>ICIP</strong>), 2023</span><br>
           <span class="pub-authors">(Also presented at NeurIPS Workshop on ML Safety, 2022)</span>
         </div>
       </div>
@@ -362,8 +380,29 @@
         <div class="item text2">
           <papertitle>Reinforcement Learning-Based Black-Box Model Inversion Attacks</papertitle><br>
           <span class="pub-authors"><strong>Gyojin Han</strong>, Jaehyun Choi, Haeil Lee, Junmo Kim</span><br>
-          <span class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2023</span> <span class="pub-type">Conference</span>
+          <span class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2023</span>
         </div>
+      </div>
+      </div>
+
+      <!-- ============================== Journal ============================== -->
+      <div id="panel-journal" role="tabpanel" aria-labelledby="tab-journal" hidden>
+
+      <div class="container2">
+        <div class="item text2">
+          <papertitle>TransMotion: Text-Guided Transformation Learning for Composed Human Motion Retrieval</papertitle><br>
+          <span class="pub-authors"><strong>Gyojin Han*†</strong>, Jongsuk Kim*, Junmo Kim†</span><br>
+          <span class="pub-venue">Applied Sciences, 2026</span>
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="item text2">
+          <papertitle>Progressive Latent Calibration for Stable Score Distillation in High Fidelity Text-to-3D Generation</papertitle><br>
+          <span class="pub-authors"><strong>Gyojin Han*</strong>, Jiwan Hur*, Junmo Kim</span><br>
+          <span class="pub-venue">Pattern Recognition (<strong>PR</strong>), 2026</span>
+        </div>
+      </div>
       </div>
 
     </div>
@@ -385,5 +424,29 @@
     </tr>
   </tbody></table>
 </div>
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.pub-tab'));
+    function select(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { select(tab); });
+      tab.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+          select(next);
+          next.focus();
+        }
+      });
+    });
+    if (location.hash === '#journal') select(document.getElementById('tab-journal'));
+  })();
+</script>
 </body>
 </html>
